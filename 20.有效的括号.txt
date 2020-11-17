@@ -1,0 +1,9 @@
+#20.有效的括号
+def isValid(s:str)->bool: #->为函数添加元数据,描述函数的返回类型
+    dic={'{':'}','[':']','(':')','?':'?'}
+    stack=['?']
+    for c in s:
+        if c in dic: stack.append(c)
+        elif dic[stack.pop()]!=c:
+            return False
+    return len(stack)==1

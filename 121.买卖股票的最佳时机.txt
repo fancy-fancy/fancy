@@ -1,0 +1,9 @@
+#买卖股票的最佳时机
+def maxProfit(prices:List[int])->int:
+    inf=int(1e9)
+    minprice=inf
+    maxprofit=0
+    for price in prices:
+        maxprofit=max(price-minprice,maxprofit)
+        minprice=min(price,minprice)
+    return maxprofit
