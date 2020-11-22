@@ -1,0 +1,18 @@
+#无重复字符的最长数据串
+def lenthOfLongestSubstring(s:str)->int:
+    if not s:
+        return 0
+    head=0
+    occ=set()
+    #set()创建一个无序的不重复的元素集，可进行可进行关系测试，删除重复数据，还可以计算交集、差集、并集等
+    n=len(s)
+    max_len,cur_len=0,0
+    for i in range(n):
+        cur_len+=1
+        while s[i] in occ:
+            occ.remove(s[head])
+            head+=1
+            cur_len-=1
+        max_len=max(cur_len,max_len)
+        occ.add(s[i])   
+    return max_len
