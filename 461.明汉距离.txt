@@ -1,0 +1,5 @@
+#明汉距离
+def minghanDistance(x:int,y:int)->int:
+    #^：XOR异或运算
+    #bin() 返回一个整数 int 或者长整数 long int 的二进制表示
+    return bin(x^y).count('1')
