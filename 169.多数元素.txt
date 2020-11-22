@@ -1,0 +1,5 @@
+#多数元素
+from collections import Counter
+def mayjorityElement(nums):
+    max=Counter(nums).most_common(1)
+    return max   

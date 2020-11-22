@@ -1,0 +1,15 @@
+#打家劫舍
+from typing import List
+def rob(nums:List[int])->int:
+    if not nums:
+        return 0
+    
+    size=len(nums)
+    if size==1:
+        return nums[0]
+    
+    x,y=nums[0],max(nums[0],nums[1])
+    for i in range(2,size):
+        x,y=y,max(x+nums[i],y)
+        
+    return y
