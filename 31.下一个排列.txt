@@ -1,0 +1,17 @@
+#下一个排列
+from typing import List
+def nextPermytation(nums:List[int])->None:
+    n=len(nums)
+    if not nums or n==1:
+        return nums
+    for i in range(n-1):
+        a=0
+        for j in range(i+1,n):
+            if nums[i]<nums[j]:
+                a=nums[i]
+                nums[i]=nums[j]
+                nums[j]=a
+                break
+        if  a!=0:
+            break
+	
